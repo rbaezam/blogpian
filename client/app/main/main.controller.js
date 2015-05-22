@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('blogpianApp')
-  .controller('MainCtrl', function ($scope, $http, socket, ngDialog) {
+  .controller('MainCtrl', function ($scope, $http, socket, $location, ngDialog) {
     $scope.awesomeThings = [];
     $scope.posts = [];
     $scope.newPostDialog = null;
@@ -33,6 +33,14 @@ angular.module('blogpianApp')
         template: 'new-post-template',
         controller: 'MainCtrl'
       });
+    };
+
+    $scope.closePostDialog = function() {
+      ngDialog.closeAll();
+    };
+
+    $scope.viewPost = function(id) {
+      $location.path('/view_post').search({id:id});
     };
 
     $scope.addThing = function() {

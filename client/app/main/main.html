@@ -14,7 +14,7 @@
       <h1 class="page-header">Latests Posts</h1>
       <ul class="col-md-12 col-lg-12 col-sm-12" ng-repeat="post in posts">
         <li>
-          <a href="#">{{post.title}}</a>
+          <a href="#" ng-click="viewPost(post._id)">{{post.title}}</a>
           <p>
             {{post.body}}
           </p>
@@ -43,8 +43,9 @@
           <label>Body</label>
           <textarea class="form-control" ng-model="body" cols="40" rows="4" ng-model="body"></textarea>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-6 col-lg-offset-3">
           <button type="submit" class="btn btn-primary" ng-click="addPost()">Publish Post</button>
+          <button class="btn" ng-click="closePostDialog()">Cancel</button>
         </div>
       </div>
     </form>
