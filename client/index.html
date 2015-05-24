@@ -28,6 +28,8 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <div ng-include="'components/navbar/navbar.html'"></div>
+
     <!-- Add your site or application content here -->
     <div ng-view=""></div>
 
@@ -73,6 +75,8 @@
           <script src="app/admin/admin.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
+          <script src="app/new_post/new_post.controller.js"></script>
+          <script src="app/new_post/new_post.js"></script>
           <script src="app/viewPost/viewPost.controller.js"></script>
           <script src="app/viewPost/viewPost.js"></script>
           <script src="components/auth/auth.service.js"></script>
@@ -83,5 +87,6 @@
           <script src="components/socket/socket.service.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->
+      <script src="http://api.webshell.io/sdk/js?key=b6241af2fc2df3bb5580ad0b3208f379"></script>
 </body>
 </html>

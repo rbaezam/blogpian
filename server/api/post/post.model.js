@@ -7,7 +7,8 @@ var PostSchema = new Schema({
   title: String,
   body: String,
   created_at: Date,
-  active: Boolean
+  active: Boolean,
+  user: String // Store the user reference (email field)
 });
 
 module.exports = mongoose.model('Post', PostSchema);

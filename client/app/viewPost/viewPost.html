@@ -1,3 +1,27 @@
 <div class="col-md-12">
-<h1>View post</h1>
+  <h1>{{post.title}}</h1>
+
+  <div class="row">
+    <div class="col-md-12">
+      <p>
+        {{post.body}}
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <p>
+        <small>published at {{post.created_at | date:"MM/dd/yyyy HH:mm"}}</small>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <p>
+        <a href="#" ng-click="returnListing()">Return to listing</a>
+      </p>
+    </div>
+  </div>
 </div>

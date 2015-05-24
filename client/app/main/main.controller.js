@@ -40,7 +40,7 @@ angular.module('blogpianApp')
     };
 
     $scope.viewPost = function(id) {
-      $location.path('/view_post').search({id:id});
+      $location.path('/view_post/' + id);
     };
 
     $scope.addThing = function() {
@@ -53,6 +53,17 @@ angular.module('blogpianApp')
 
     $scope.deleteThing = function(thing) {
       $http.delete('/api/things/' + thing._id);
+    };
+
+    $scope.shareWithTwitter = function() {
+      wsh.exec({
+        code: function() {
+          apis.twitter.auth();
+        },
+        process: function(json, meta) {
+          $('body').append(meta.view);
+        }
+      })
     };
 
     $scope.$on('$destroy', function () {

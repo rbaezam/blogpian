@@ -4,8 +4,15 @@ angular.module('blogpianApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
       'title': 'Home',
-      'link': '/'
-    }];
+      'link': '/',
+      'public': true
+    },
+    {
+      'title': 'New post',
+      'link': '/new_post',
+      'public': false
+    }
+    ];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;

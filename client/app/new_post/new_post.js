@@ -3,8 +3,8 @@
 angular.module('blogpianApp')
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/view_post/:id', {
-        templateUrl: 'app/viewPost/viewPost.html',
-        controller: 'ViewPostCtrl'
+      .when('/new_post', {
+        templateUrl: 'app/new_post/new_post.html',
+        controller: 'NewPostCtrl'
       });
   });
