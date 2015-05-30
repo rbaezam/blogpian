@@ -1,5 +1,15 @@
 'use strict';
 
+var RESPONSE = [
+  {
+    "title": "first post",
+    "body": "body of first post",
+    "created_at": new Date(),
+    "active": true,
+    "user": "test@email.com"
+  }
+];
+
 describe('Controller: MainCtrl', function () {
 
   // load the controller's module
@@ -13,8 +23,8 @@ describe('Controller: MainCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$httpBackend_, $controller, $rootScope) {
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('/api/things')
-      .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
+    $httpBackend.expectGET('/api/posts')
+      .respond(RESPONSE);
 
     scope = $rootScope.$new();
     MainCtrl = $controller('MainCtrl', {
@@ -22,8 +32,8 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  it('should attach a list of things to the scope', function () {
+  it('should attach a list of posts to the scope', function () {
     $httpBackend.flush();
-    expect(scope.awesomeThings.length).toBe(4);
+    expect(scope.posts.length).toBe(1);
   });
 });
